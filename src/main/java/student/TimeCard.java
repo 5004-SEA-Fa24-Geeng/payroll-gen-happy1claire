@@ -1,13 +1,13 @@
 package student;
 
 /**
- * This is a class store information that time cards needed
+ * This is a class store information that time cards needed.
  */
 public class TimeCard implements ITimeCard {
-    /** String holds the employee id*/
+    /** String holds the employee id.*/
     private final String employeeID;
-    /** Double holds employee working hours for this payment period*/
-    private final double HoursWorked;
+    /** Double holds employee working hours for this payment period.*/
+    private final double hoursWorked;
 
     /**
      * Default constructor for time card.
@@ -16,11 +16,11 @@ public class TimeCard implements ITimeCard {
      */
     public TimeCard(String employeeID, double hoursWorked) {
         this.employeeID = employeeID;
-        this.HoursWorked = hoursWorked;
+        this.hoursWorked = hoursWorked;
     }
 
     /**
-     * return employee id
+     * return employee id.
      * @return employee id
      */
     public String getEmployeeID() {
@@ -28,10 +28,10 @@ public class TimeCard implements ITimeCard {
     }
 
     /**
-     * return working hours
+     * return working hours.
      * @return working hours
      */
     public double getHoursWorked() {
-        return HoursWorked;
+        return hoursWorked;
     }
 }

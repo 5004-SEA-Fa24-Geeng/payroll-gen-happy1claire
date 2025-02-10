@@ -18,7 +18,7 @@ public class HourlyEmployee extends Employee {
     private double overTimePayRate = 1.5;
 
     /**
-     * Constructor for hourly employee
+     * Constructor for hourly employee.
      *
      * @param name             employee name
      * @param id               employee id

@@ -67,8 +67,7 @@ public abstract class Employee implements IEmployee {
     }
 
     /**
-     * return employee name
-     *
+     * return employee name.
      * @return employee name
      */
     @Override
@@ -77,8 +76,7 @@ public abstract class Employee implements IEmployee {
     }
 
     /**
-     * return employee id
-     *
+     * return employee id.
      * @return employee id
      */
     @Override
@@ -87,8 +85,7 @@ public abstract class Employee implements IEmployee {
     }
 
     /**
-     * return employee pay rate
-     *
+     * return employee pay rate.
      * @return employee pay rate
      */
     @Override
@@ -98,8 +95,7 @@ public abstract class Employee implements IEmployee {
 
 
     /**
-     * return employee year to date earning
-     *
+     * return employee year to date earning.
      * @return employee year to date earning
      */
     @Override
@@ -108,8 +104,7 @@ public abstract class Employee implements IEmployee {
     }
 
     /**
-     * return employee year to date tax paid
-     *
+     * return employee year to date tax paid.
      * @return employee year to date tax paid
      */
     @Override
@@ -118,8 +113,7 @@ public abstract class Employee implements IEmployee {
     }
 
     /**
-     * return employee pretax deduction
-     *
+     * return employee pretax deduction.
      * @return employee pretax deduction
      */
     @Override
@@ -128,24 +122,22 @@ public abstract class Employee implements IEmployee {
     }
 
     /**
-     * return employee name for csv
-     *
+     * return employee name for csv.
      * @return employee name for csv
      */
     @Override
     public String toCSV() {
-        return this.getEmployeeType() + "," +
-                this.name + "," +
-                this.id + "," +
-                this.payRate + "," +
-                this.pretaxDeductions + "," +
-                this.ytdEarnings + "," +
-                this.ytdTaxesPaid;
+        return this.getEmployeeType() + ","
+                + this.name + ","
+                + this.id + ","
+                + this.payRate + ","
+                + this.pretaxDeductions + ","
+                + this.ytdEarnings + ","
+                + this.ytdTaxesPaid;
     }
 
     /**
-     * return double value with 0.01 round up precision
-     *
+     * return double value with 0.01 round up precision.
      * @return double value
      */
     public static double roundedUpByBD(double d) {

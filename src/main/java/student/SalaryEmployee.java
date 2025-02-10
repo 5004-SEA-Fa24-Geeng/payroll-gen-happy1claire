@@ -7,10 +7,10 @@ public class SalaryEmployee extends Employee {
     /**
      * Pay period for employee across entire year with biweekly payment.
      */
-    private double pay_period = 24;
+    private double payPeriod = 24;
 
     /**
-     * Constructor for salary employee
+     * Constructor for salary employee.
      *
      * @param name             employee name
      * @param id               employee id
@@ -30,7 +30,7 @@ public class SalaryEmployee extends Employee {
     }
 
     /**
-     * Get employee type
+     * Get employee type.
      * @return employee type
      */
     @Override
@@ -47,10 +47,10 @@ public class SalaryEmployee extends Employee {
     @Override
     public IPayStub runPayroll(double hoursWorked) {
         if (hoursWorked >= 0) {
-            double taxPaid = (this.payRate / this.pay_period - this.pretaxDeductions) * this.taxRate;
+            double taxPaid = (this.payRate / this.payPeriod - this.pretaxDeductions) * this.taxRate;
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
-            double netPay = (this.payRate / this.pay_period - this.pretaxDeductions) * (1 - this.taxRate);
+            double netPay = (this.payRate / this.payPeriod - this.pretaxDeductions) * (1 - this.taxRate);
             netPay = Employee.roundedUpByBD(netPay);
 
             this.ytdEarnings += netPay;
@@ -66,8 +66,7 @@ public class SalaryEmployee extends Employee {
             this.payStub = payStub;
 
             return payStub;
-        }
-        else {
+        } else {
             return null;
         }
     }
