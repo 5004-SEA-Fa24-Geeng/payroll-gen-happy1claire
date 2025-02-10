@@ -11,7 +11,6 @@ public final class Builder {
     private Builder() {
     }
 
-
      /**
      * Builds an employee object from a CSV string.
      * 
