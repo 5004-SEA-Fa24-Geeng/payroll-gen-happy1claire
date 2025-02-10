@@ -70,7 +70,10 @@ public class SalaryEmployee extends Employee {
             this.payStub = payStub;
 
             return payStub;
-        } else {
+        } else if (hoursWorked == 0){
+            return null;
+        }
+        else {
             return null;
         }
     }
