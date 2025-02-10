@@ -22,11 +22,40 @@ public final class Builder {
      * @return the employee object
      */
     public static IEmployee buildEmployeeFromCSV(String csv) {
+        String[] employeeData = csv.split(",");
+        if (employeeData.length != 7) {
+            throw new IllegalArgumentException("Csv data must contains 7 elements");
+        }
 
-        return null;
+        try {
+            double payRate = Double.parseDouble(employeeData[3]);
+            double preTaxDeduction = Double.parseDouble(employeeData[4]);
+            double ytdEarnings = Double.parseDouble(employeeData[5]);
+            double ytdTaxesPaid = Double.parseDouble(employeeData[6]);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid input. Double type required." + e.getMessage());
+        }
+
+        if (employeeData[0].equals("HOURLY")) {
+            return new HourlyEmployee(
+                    employeeData[0],
+                    employeeData[1],
+                    employeeData[2],
+                    Double.parseDouble(employeeData[3]),
+                    Double.parseDouble(employeeData[4]),
+                    Double.parseDouble(employeeData[5]),
+                    Double.parseDouble(employeeData[6]));
+        } else {
+            return new SalaryEmployee(
+                    employeeData[0],
+                    employeeData[1],
+                    employeeData[2],
+                    Double.parseDouble(employeeData[3]),
+                    Double.parseDouble(employeeData[4]),
+                    Double.parseDouble(employeeData[5]),
+                    Double.parseDouble(employeeData[6]));
+        }
     }
-
-
 
    /**
      * Converts a TimeCard from a CSV String.
@@ -35,7 +64,7 @@ public final class Builder {
      * @return a TimeCard object
      */
     public static ITimeCard buildTimeCardFromCSV(String csv) {
-    
-        return null;
+        String[] timeCardData = csv.split(",");
+        return new TimeCard(timeCardData[0], Double.parseDouble(timeCardData[1]));
     }
 }
