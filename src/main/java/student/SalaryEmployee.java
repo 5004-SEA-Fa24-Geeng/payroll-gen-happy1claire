@@ -26,11 +26,11 @@ public class SalaryEmployee extends Employee {
     public SalaryEmployee(String name,
                           String id,
                           double payRate,
-                          double pretaxDeductions,
                           double ytdEarnings,
-                          double ytdTaxesPaid
+                          double ytdTaxesPaid,
+                          double pretaxDeductions
     ) {
-        super(name, id, payRate, pretaxDeductions, ytdEarnings, ytdTaxesPaid);
+        super(name, id, payRate, ytdEarnings, ytdTaxesPaid, pretaxDeductions);
     }
 
     @Override
