@@ -47,23 +47,23 @@ public class SalaryEmployee extends Employee {
     @Override
     public IPayStub runPayroll(double hoursWorked) {
         if (hoursWorked >= 0) {
-            double taxPaid = (this.payRate / this.payPeriod - this.pretaxDeductions) * this.taxRate;
+            double taxPaid = (this.getPayRate() / this.payPeriod - this.getPretaxDeductions()) * this.getTaxRate();
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
-            double netPay = (this.payRate / this.payPeriod - this.pretaxDeductions) * (1 - this.taxRate);
+            double netPay = (this.getPayRate() / this.payPeriod - this.getPretaxDeductions()) * (1 - this.getTaxRate());
             netPay = Employee.roundedUpByBD(netPay);
 
-            this.ytdEarnings += netPay;
-            this.ytdTaxesPaid += taxPaid;
+            this.addYtdEarnings(netPay);
+            this.addYtdTaxesPaid(taxPaid);
 
-            IPayStub payStub = new PayStub(this.id,
-                    this.name,
+            IPayStub payStub = new PayStub(this.getID(),
+                    this.getName(),
                     netPay,
                     taxPaid,
-                    this.ytdEarnings,
-                    this.ytdTaxesPaid
+                    this.getYTDEarnings(),
+                    this.getYTDTaxesPaid()
             );
-            this.payStub = payStub;
+            this.setPayStub(payStub);
 
             return payStub;
         } else {

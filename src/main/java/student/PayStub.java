@@ -27,14 +27,14 @@ public class PayStub implements IPayStub {
      * @param ytdEarnings year to date earning
      * @param ytdTaxesPaid year to date paid tax
      */
-    public PayStub(String employeeId,
+    public PayStub(String employeeID,
                    String name,
                    double pay,
                    double taxesPaid,
                    double ytdEarnings,
                    double ytdTaxesPaid
                    ) {
-        this.employeeID = employeeId;
+        this.employeeID = employeeID;
         this.name = name;
         this.netPay = pay;
         this.taxPaid = taxesPaid;

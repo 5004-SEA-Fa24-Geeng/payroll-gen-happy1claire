@@ -11,35 +11,35 @@ public abstract class Employee implements IEmployee {
     /**
      * String holds the employee name.
      */
-    protected String name;
+    private String name;
     /**
      * String holds the employee id.
      */
-    protected String id;
+    private String id;
     /**
      * Double holds the employee pay rate.
      */
-    protected double payRate;
+    private double payRate;
     /**
      * Double holds the employee year to date earning.
      */
-    protected double ytdEarnings;
+    private double ytdEarnings;
     /**
      * Double holds the employee year to date paid tax.
      */
-    protected double ytdTaxesPaid;
+    private double ytdTaxesPaid;
     /**
      * Double holds the employee pretax deduction.
      */
-    protected double pretaxDeductions;
+    private double pretaxDeductions;
     /**
      * PayStub holds the employee pay stub of current period.
      */
-    protected IPayStub payStub;
+    private IPayStub payStub;
     /**
      * Double holds the employee's pay rate.
      */
-    protected double taxRate = 0.2265;
+    private double taxRate = 0.2265;
 
     /**
      * Default constructor for all kind of employees.
@@ -122,6 +122,38 @@ public abstract class Employee implements IEmployee {
     }
 
     /**
+     * return tax rate.
+     * @return tax rate
+     */
+    public double getTaxRate() {
+        return taxRate;
+    }
+
+    /**
+     * set pay stub for this payment period.
+     * @param payStub the pay stub of this payment period
+     */
+    public void setPayStub(IPayStub payStub) {
+       this.payStub = payStub;
+    }
+
+    /**
+     * add the net  pay of this payment period to year to date earning.
+     * @param earning the net pay of this payment period
+     */
+    public void addYtdEarnings(double earning) {
+        this.ytdEarnings += ytdEarnings;
+    }
+
+    /**
+     add the tax par for this payment period to year to date earning.
+     * @param tax the tax pay for this payment period
+     */
+    public void addYtdTaxesPaid(double tax) {
+        this.ytdTaxesPaid += tax;
+    }
+
+    /**
      * return employee name for csv.
      * @return employee name for csv
      */
@@ -138,6 +170,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return double value with 0.01 round up precision.
+     * @param d double value that need to be round up
      * @return double value
      */
     public static double roundedUpByBD(double d) {

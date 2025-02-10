@@ -53,48 +53,48 @@ public class HourlyEmployee extends Employee {
         double overTimeHoursWorked = hoursWorked - this.overTime;
 
         if (hoursWorked <= 40 && hoursWorked > 0) {
-            double netPay = (this.payRate * hoursWorked - this.pretaxDeductions) * (1 - this.taxRate);
+            double netPay = (this.getPayRate() * hoursWorked - this.getPretaxDeductions()) * (1 - this.getTaxRate());
             netPay = Employee.roundedUpByBD(netPay);
 
-            double taxPaid = (this.payRate * hoursWorked - this.pretaxDeductions) * this.taxRate;
+            double taxPaid = (this.getPayRate() * hoursWorked - this.getPretaxDeductions()) * this.getTaxRate();
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
-            this.ytdEarnings += netPay;
-            this.ytdTaxesPaid += taxPaid;
+            this.addYtdEarnings(netPay);
+            this.addYtdTaxesPaid(taxPaid);
 
-            IPayStub payStub = new PayStub(this.id,
-                    this.name,
+            IPayStub payStub = new PayStub(this.getID(),
+                    this.getName(),
                     netPay,
                     taxPaid,
-                    this.ytdEarnings,
-                    this.ytdTaxesPaid
+                    this.getYTDEarnings(),
+                    this.getYTDTaxesPaid()
             );
-            this.payStub = payStub;
+            this.setPayStub(payStub);
 
             return payStub;
 
         } else if (hoursWorked > 40) {
-            double inTimePay = this.payRate * inTimeHoursWorked;
+            double inTimePay = this.getPayRate() * inTimeHoursWorked;
 
-            double overTimePay = this.payRate * overTimePayRate * overTimeHoursWorked;
+            double overTimePay = this.getPayRate() * overTimePayRate * overTimeHoursWorked;
 
-            double netPay = (inTimePay + overTimePay - this.pretaxDeductions) * (1 - this.taxRate);
+            double netPay = (inTimePay + overTimePay - this.getPretaxDeductions()) * (1 - this.getTaxRate());
             netPay = Employee.roundedUpByBD(netPay);
 
-            double taxPaid = (inTimePay + overTimePay - this.pretaxDeductions) * this.taxRate;
+            double taxPaid = (inTimePay + overTimePay - this.getPretaxDeductions()) * this.getTaxRate();
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
-            this.ytdEarnings += netPay;
-            this.ytdTaxesPaid += taxPaid;
+            this.addYtdEarnings(netPay);
+            this.addYtdTaxesPaid(taxPaid);
 
-            IPayStub payStub = new PayStub(this.id,
-                    this.name,
+            IPayStub payStub = new PayStub(this.getID(),
+                    this.getName(),
                     netPay,
                     taxPaid,
-                    this.ytdEarnings,
-                    this.ytdTaxesPaid
+                    this.getYTDEarnings(),
+                    this.getYTDTaxesPaid()
             );
-            this.payStub = payStub;
+            this.setPayStub(payStub);
 
             return payStub;
         } else {
