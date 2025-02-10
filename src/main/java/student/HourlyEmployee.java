@@ -42,7 +42,7 @@ public class HourlyEmployee extends Employee {
 
     @Override
     public String getEmployeeType() {
-        return "Hourly";
+        return "HOURLY";
     }
 
     /**

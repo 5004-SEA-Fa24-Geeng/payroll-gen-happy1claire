@@ -35,7 +35,7 @@ public class SalaryEmployee extends Employee {
 
     @Override
     public String getEmployeeType() {
-        return "Salary";
+        return "SALARY";
     }
 
 
