@@ -7,37 +7,43 @@ import java.math.RoundingMode;
  * This is a class that represent all information for hourly employee
  */
 public class HourlyEmployee extends Employee {
-    /** Maximum working hours before over time*/
+    /**
+     * Maximum working hours before over time
+     */
     private double inTimeHoursWorked = 40;
-    /** Standard of overtime working hours*/
+    /**
+     * Standard of overtime working hours
+     */
     private double overTime = 40;
-    /** Overtime working hours pay rate*/
+    /**
+     * Overtime working hours pay rate
+     */
     private double overTimePayRate = 1.5;
 
     /**
      * Constructor for hourly employee
-     * @param employeeType employee type
-     * @param name employee name
-     * @param id employee id
-     * @param payRate employee pay rate
+     *
+     * @param name             employee name
+     * @param id               employee id
+     * @param payRate          employee pay rate
      * @param pretaxDeductions employee pretax deduction
-     * @param ytdEarnings year to date earning
-     * @param ytdTaxesPaid year to date paid tax
+     * @param ytdEarnings      year to date earning
+     * @param ytdTaxesPaid     year to date paid tax
      */
-    public HourlyEmployee(String employeeType,
-                          String name,
-                          String id,
-                          double payRate,
-                          double ytdEarnings,
-                          double ytdTaxesPaid,
-                          double pretaxDeductions) {
-        super(employeeType, name, id, payRate, ytdEarnings, ytdTaxesPaid, pretaxDeductions);
+    public HourlyEmployee(
+            String name,
+            String id,
+            double payRate,
+            double ytdEarnings,
+            double ytdTaxesPaid,
+            double pretaxDeductions) {
+        super(name, id, payRate, ytdEarnings, ytdTaxesPaid, pretaxDeductions);
     }
 
     /**
      * Generate pay stub based on employee's information and hours worked.
-     * @param hoursWorked the hours worked for the pay period
      *
+     * @param hoursWorked the hours worked for the pay period
      * @return Employee's pay stub
      */
     @Override
@@ -60,7 +66,7 @@ public class HourlyEmployee extends Employee {
                     taxPaid,
                     this.ytdEarnings,
                     this.ytdTaxesPaid
-                    );
+            );
             this.payStub = payStub;
 
             return payStub;
@@ -85,7 +91,7 @@ public class HourlyEmployee extends Employee {
                     taxPaid,
                     this.ytdEarnings,
                     this.ytdTaxesPaid
-                    );
+            );
             this.payStub = payStub;
 
             return payStub;

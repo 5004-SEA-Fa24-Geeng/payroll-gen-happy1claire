@@ -8,44 +8,56 @@ import java.math.RoundingMode;
  */
 public abstract class Employee implements IEmployee {
 
-    /** String holds the employee type*/
-    protected String employeeType;
-    /** String holds the employee name*/
+    /**
+     * String holds the employee name
+     */
     protected String name;
-    /** String holds the employee id*/
+    /**
+     * String holds the employee id
+     */
     protected String id;
-    /** Double holds the employee pay rate*/
+    /**
+     * Double holds the employee pay rate
+     */
     protected double payRate;
-    /** Double holds the employee year to date earning*/
+    /**
+     * Double holds the employee year to date earning
+     */
     protected double ytdEarnings;
-    /** Double holds the employee year to date paid tax*/
+    /**
+     * Double holds the employee year to date paid tax
+     */
     protected double ytdTaxesPaid;
-    /** Double holds the employee pretax deduction*/
+    /**
+     * Double holds the employee pretax deduction
+     */
     protected double pretaxDeductions;
-    /** PayStub holds the employee pay stub of current period*/
+    /**
+     * PayStub holds the employee pay stub of current period
+     */
     protected IPayStub payStub;
-    /** Double holds the employee's pay rate*/
+    /**
+     * Double holds the employee's pay rate
+     */
     protected double tax_rate = 0.2265;
 
     /**
      * Default constructor for all kind of employees.
-     * @param employeeType employee type
-     * @param name employee name
-     * @param id employee id
-     * @param payRate employee pay rate
+     *
+     * @param name             employee name
+     * @param id               employee id
+     * @param payRate          employee pay rate
      * @param pretaxDeductions employee pretax deduction
-     * @param ytdEarnings year to date earning
-     * @param ytdTaxesPaid year to date paid tax
+     * @param ytdEarnings      year to date earning
+     * @param ytdTaxesPaid     year to date paid tax
      */
-    public Employee(String employeeType,
-                    String name,
+    public Employee(String name,
                     String id,
                     double payRate,
                     double pretaxDeductions,
                     double ytdEarnings,
                     double ytdTaxesPaid
-                    ) {
-        this.employeeType = employeeType;
+    ) {
         this.name = name;
         this.id = id;
         this.payRate = payRate;
@@ -56,6 +68,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee name
+     *
      * @return employee name
      */
     @Override
@@ -65,6 +78,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee id
+     *
      * @return employee id
      */
     @Override
@@ -74,6 +88,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee pay rate
+     *
      * @return employee pay rate
      */
     @Override
@@ -83,6 +98,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee type
+     *
      * @return employee type
      */
     @Override
@@ -92,6 +108,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee year to date earning
+     *
      * @return employee year to date earning
      */
     @Override
@@ -101,6 +118,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee year to date tax paid
+     *
      * @return employee year to date tax paid
      */
     @Override
@@ -110,6 +128,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee pretax deduction
+     *
      * @return employee pretax deduction
      */
     @Override
@@ -119,6 +138,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return employee name for csv
+     *
      * @return employee name for csv
      */
     @Override
@@ -128,6 +148,7 @@ public abstract class Employee implements IEmployee {
 
     /**
      * return double value with 0.01 round up precision
+     *
      * @return double value
      */
     public static double roundedUpByBD(double d) {

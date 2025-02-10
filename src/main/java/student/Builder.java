@@ -38,7 +38,6 @@ public final class Builder {
 
         if (employeeData[0].equals("HOURLY")) {
             return new HourlyEmployee(
-                    employeeData[0],
                     employeeData[1],
                     employeeData[2],
                     Double.parseDouble(employeeData[3]),
@@ -47,7 +46,6 @@ public final class Builder {
                     Double.parseDouble(employeeData[6]));
         } else {
             return new SalaryEmployee(
-                    employeeData[0],
                     employeeData[1],
                     employeeData[2],
                     Double.parseDouble(employeeData[3]),
