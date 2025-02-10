@@ -96,15 +96,6 @@ public abstract class Employee implements IEmployee {
         return payRate;
     }
 
-    /**
-     * return employee type
-     *
-     * @return employee type
-     */
-    @Override
-    public String getEmployeeType() {
-        return this.employeeType;
-    }
 
     /**
      * return employee year to date earning

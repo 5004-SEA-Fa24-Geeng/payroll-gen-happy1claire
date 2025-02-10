@@ -33,6 +33,12 @@ public class SalaryEmployee extends Employee {
         super(name, id, payRate, pretaxDeductions, ytdEarnings, ytdTaxesPaid);
     }
 
+    @Override
+    public String getEmployeeType() {
+        return "Salary";
+    }
+
+
     /**
      * Generate pay stub based on employee's information and hours worked.
      *
