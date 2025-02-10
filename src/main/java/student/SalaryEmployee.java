@@ -5,7 +5,7 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 
 /**
- * This is a class that represent all information for salary employee
+ * This is a class that represent all information for salary employee.
  */
 public class SalaryEmployee extends Employee {
     /**
@@ -33,11 +33,14 @@ public class SalaryEmployee extends Employee {
         super(name, id, payRate, ytdEarnings, ytdTaxesPaid, pretaxDeductions);
     }
 
+    /**
+     * Get employee type
+     * @return employee type
+     */
     @Override
     public String getEmployeeType() {
         return "SALARY";
     }
-
 
     /**
      * Generate pay stub based on employee's information and hours worked.

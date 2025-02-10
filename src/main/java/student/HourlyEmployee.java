@@ -30,13 +30,13 @@ public class HourlyEmployee extends Employee {
      * @param ytdEarnings      year to date earning
      * @param ytdTaxesPaid     year to date paid tax
      */
-    public HourlyEmployee(
-            String name,
-            String id,
-            double payRate,
-            double ytdEarnings,
-            double ytdTaxesPaid,
-            double pretaxDeductions) {
+    public HourlyEmployee(String name,
+                          String id,
+                          double payRate,
+                          double ytdEarnings,
+                          double ytdTaxesPaid,
+                          double pretaxDeductions
+    ) {
         super(name, id, payRate, ytdEarnings, ytdTaxesPaid, pretaxDeductions);
     }
 

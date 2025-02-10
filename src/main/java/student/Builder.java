@@ -41,17 +41,17 @@ public final class Builder {
                     employeeData[1],
                     employeeData[2],
                     Double.parseDouble(employeeData[3]),
-                    Double.parseDouble(employeeData[4]),
                     Double.parseDouble(employeeData[5]),
-                    Double.parseDouble(employeeData[6]));
+                    Double.parseDouble(employeeData[6]),
+                    Double.parseDouble(employeeData[4]));
         } else {
             return new SalaryEmployee(
                     employeeData[1],
                     employeeData[2],
                     Double.parseDouble(employeeData[3]),
-                    Double.parseDouble(employeeData[4]),
                     Double.parseDouble(employeeData[5]),
-                    Double.parseDouble(employeeData[6]));
+                    Double.parseDouble(employeeData[6]),
+                    Double.parseDouble(employeeData[4]));
         }
     }
 

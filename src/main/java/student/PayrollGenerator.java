@@ -79,14 +79,12 @@ public final class PayrollGenerator {
          // now save out employees to a new file
 
          employeeLines = employees.stream().map(IEmployee::toCSV).collect(Collectors.toList());
-         System.out.println(employeeLines);
          employeeLines.add(0, FileUtil.EMPLOYEE_HEADER);
          FileUtil.writeFile(arguments.getEmployeeFile(), employeeLines);
 
          // now save out the pay stubs
          List<String> payStubLines = payStubs.stream().filter(x -> x != null).map(IPayStub::toCSV)
                  .collect(Collectors.toList());
-         System.out.println(payStubLines);
          payStubLines.add(0, FileUtil.PAY_STUB_HEADER);
          FileUtil.writeFile(arguments.getPayrollFile(), payStubLines);
     }
