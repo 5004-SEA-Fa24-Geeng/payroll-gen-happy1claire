@@ -1,9 +1,5 @@
 package student;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
-
 /**
  * This is a class that represent all information for salary employee.
  */
@@ -51,10 +47,10 @@ public class SalaryEmployee extends Employee {
     @Override
     public IPayStub runPayroll(double hoursWorked) {
         if (hoursWorked >= 0) {
-            double taxPaid = (this.payRate / this.pay_period - this.pretaxDeductions) * this.tax_rate;
+            double taxPaid = (this.payRate / this.pay_period - this.pretaxDeductions) * this.taxRate;
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
-            double netPay = (this.payRate / this.pay_period - this.pretaxDeductions) * (1 - this.tax_rate);
+            double netPay = (this.payRate / this.pay_period - this.pretaxDeductions) * (1 - this.taxRate);
             netPay = Employee.roundedUpByBD(netPay);
 
             this.ytdEarnings += netPay;

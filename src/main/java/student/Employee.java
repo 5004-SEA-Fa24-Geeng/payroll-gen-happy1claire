@@ -4,42 +4,42 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * This is an abstract class to store all information related to all kind of employees
+ * This is an abstract class to store all information related to all kind of employees.
  */
 public abstract class Employee implements IEmployee {
 
     /**
-     * String holds the employee name
+     * String holds the employee name.
      */
     protected String name;
     /**
-     * String holds the employee id
+     * String holds the employee id.
      */
     protected String id;
     /**
-     * Double holds the employee pay rate
+     * Double holds the employee pay rate.
      */
     protected double payRate;
     /**
-     * Double holds the employee year to date earning
+     * Double holds the employee year to date earning.
      */
     protected double ytdEarnings;
     /**
-     * Double holds the employee year to date paid tax
+     * Double holds the employee year to date paid tax.
      */
     protected double ytdTaxesPaid;
     /**
-     * Double holds the employee pretax deduction
+     * Double holds the employee pretax deduction.
      */
     protected double pretaxDeductions;
     /**
-     * PayStub holds the employee pay stub of current period
+     * PayStub holds the employee pay stub of current period.
      */
     protected IPayStub payStub;
     /**
-     * Double holds the employee's pay rate
+     * Double holds the employee's pay rate.
      */
-    protected double tax_rate = 0.2265;
+    protected double taxRate = 0.2265;
 
     /**
      * Default constructor for all kind of employees.

@@ -1,22 +1,19 @@
 package student;
 
-import java.math.MathContext;
-import java.math.RoundingMode;
-
 /**
- * This is a class that represent all information for hourly employee
+ * This is a class that represent all information for hourly employee.
  */
 public class HourlyEmployee extends Employee {
     /**
-     * Maximum working hours before over time
+     * Maximum working hours before over time.
      */
     private double inTimeHoursWorked = 40;
     /**
-     * Standard of overtime working hours
+     * Standard of overtime working hours.
      */
     private double overTime = 40;
     /**
-     * Overtime working hours pay rate
+     * Overtime working hours pay rate.
      */
     private double overTimePayRate = 1.5;
 
@@ -56,10 +53,10 @@ public class HourlyEmployee extends Employee {
         double overTimeHoursWorked = hoursWorked - this.overTime;
 
         if (hoursWorked <= 40 && hoursWorked > 0) {
-            double netPay = (this.payRate * hoursWorked - this.pretaxDeductions) * (1 - this.tax_rate);
+            double netPay = (this.payRate * hoursWorked - this.pretaxDeductions) * (1 - this.taxRate);
             netPay = Employee.roundedUpByBD(netPay);
 
-            double taxPaid = (this.payRate * hoursWorked - this.pretaxDeductions) * this.tax_rate;
+            double taxPaid = (this.payRate * hoursWorked - this.pretaxDeductions) * this.taxRate;
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
             this.ytdEarnings += netPay;
@@ -81,10 +78,10 @@ public class HourlyEmployee extends Employee {
 
             double overTimePay = this.payRate * overTimePayRate * overTimeHoursWorked;
 
-            double netPay = (inTimePay + overTimePay - this.pretaxDeductions) * (1 - this.tax_rate);
+            double netPay = (inTimePay + overTimePay - this.pretaxDeductions) * (1 - this.taxRate);
             netPay = Employee.roundedUpByBD(netPay);
 
-            double taxPaid = (inTimePay + overTimePay - this.pretaxDeductions) * this.tax_rate;
+            double taxPaid = (inTimePay + overTimePay - this.pretaxDeductions) * this.taxRate;
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
             this.ytdEarnings += netPay;
