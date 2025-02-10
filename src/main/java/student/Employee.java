@@ -142,7 +142,7 @@ public abstract class Employee implements IEmployee {
      * @param earning the net pay of this payment period
      */
     public void addYtdEarnings(double earning) {
-        this.ytdEarnings += ytdEarnings;
+        this.ytdEarnings += earning;
     }
 
     /**
