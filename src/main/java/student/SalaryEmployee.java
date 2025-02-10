@@ -50,7 +50,7 @@ public class SalaryEmployee extends Employee {
      */
     @Override
     public IPayStub runPayroll(double hoursWorked) {
-        if (hoursWorked > 0) {
+        if (hoursWorked >= 0) {
             double taxPaid = (this.payRate / this.pay_period - this.pretaxDeductions) * this.tax_rate;
             taxPaid = Employee.roundedUpByBD(taxPaid);
 
@@ -70,8 +70,6 @@ public class SalaryEmployee extends Employee {
             this.payStub = payStub;
 
             return payStub;
-        } else if (hoursWorked == 0){
-            return null;
         }
         else {
             return null;
